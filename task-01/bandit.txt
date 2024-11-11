@@ -1,0 +1,33 @@
+Level0 - logged into the game using ssh bandit0@bandit.labs.overthewire.org -p 2220
+
+Level0->Level1 - used ls to list all files (readme), opened it to find the password ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+
+Level1->Level2 - used cat ./- to open the dashed file and got 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+
+Level2->Level3 - to open the file "spaces in this filename" I used the command cat "spaces in this filename" and got the password for the next level that is MNk8KNH3Usiio41PRUEoDFPqfxLPlSmxS 
+
+Level3->Level4 - used ls -a to view all files (including the hidden ones) and got to see a folder named "inhere" opened it using cd inhere and then I used ls -a again to see a file named ...Hiding-From-You, and opened it using the command cat ...Hiding-From-You to get the password for the next level which is 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+
+Level4->Level5 - used ls to find an inhere folder, inside the folder there were 10 files. human readable are mostly ascii, to see which ones are ascii i used file ./* to find file07 is ascii, used cat ./-file07 to get the password 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+
+Level5->Level6 - inside the inhere folder there were 20 folders. to filter the one which is readable, 1033 bytes in size and is not executable i used the command find ./* -size 1033c ! -executable to see maybehere07 which has file 2 in it. opened it to see the password for the next level which is HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+
+Level6->Level7 - used the command find / -user bandit7 -group bandit6 -size 33c to see many files of the required essentials and saw a particular files among them named bandit7.password, opened it to see morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+
+Level7->Level8 - used grep function to match with the word millionth in a text file and got the password dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+
+Level8->Level9 - to find the line of text that only occur once i used the command sort data.txt | uniq -u and got the password 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
+Level9->Level10 - used strings to read human-readable strings and used grep = to print the lines with = in it and got the password FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+
+Level10->Level11 - found data.txt having base64 encoded data and used base64 -d command to decode it and found the password dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
+Level11->Level12 - got to know about rot13 and used tr 'A-Za-z' 'N-ZA-Mn-za-m' to implement it on data.txt to get 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
+Level12->Leavel13 - made a temporary directory using mktemp -d command the copied data.txt from the home directory using cp ~/data.txt . the file is having hexadecimal data, had to convert it to binary. first I changed the file name to just data the used xxd -r data pswd to get the binary data output file having name pswd. tried to open it but it said it was gzip compressed data. had to decompress it. renamed it using mv pswd pswd.gz and decompressed it using the command gunzip pswd.gz. tried to open it but it was bzip2 compressed, decompressed it using bunzip2 pswd, tried to open it but it was gzip compressed, repeated the step from before to decompress it. tried to open it but it was tar archived, had to extract it using tar -xf pswd to get an extracted file named data5.bin in the current directory, turns out its tar archived too, had to repeat the same process till it showed the file was in ASCII text, so I opened it using cat command to get the password FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+
+Level13->Leavel14 - found the sshkey.private and used the private key to log into the next level bandit4 using the command ssh -i sshkey.private -p 2220 bandit14@localhost , then used cat /etc/bandit_pass/bandit14 to get the password which is MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS
+
+Level14->Level15 - to connect to the given network I used the nc command, nc localhost 30000 and typed in the password of the current level MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS to get the password for the next level that is 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+
+Level15-Level16 - I opened ssl connection to a server running on localhost at port 30001 using ssl encryption via the command openssl s_client -connect localhost:30001 and they asked me the type in the password of current level, which I did and got the password for the next level that is kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
