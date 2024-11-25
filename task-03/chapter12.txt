@@ -1,0 +1,46 @@
+PRACTICE QUESTIONS ANSWERS:
+
+1. webbrowser: It comes with python and opens a browser to a specific page. The webbrowser module’s open() function can launch a new browser to a specified URL.
+
+   requests: Downloads files and web pages from the internet. The requests module lets you easily download files from the web without having to worry about complicated issues such as network errors, connection problems, and data compression. The requests.get() function takes a string of a URL to download.
+   
+   bs4: Beautiful Soup parses HTML, the format that web pages are written in. It is a module for extracting information from an HTML page. The bs4.BeautifulSoup() function needs to be called with a string containing the HTML it will parse.
+   
+   selenium: It launches and controls a web browser. The selenium module lets Python directly control the browser by programmatically clicking links and filling in login information, almost as though there were a human user interacting with the page.
+   
+2. It returns a Response object, which contains the response that the web server gave for your request. You can access the downloaded content as a string value using requests.get() function.
+
+3. raise_for_status() function checks the downloaded work. This will raise an exception if there was an error downloading the file and will do nothing if the download succeeded.
+
+4. You can tell that the request for this web page succeeded by checking the status_code attribute of the Response object. If it is equal to the value of requests.codes.ok, then everything went fine.
+
+5. .write() function is used to save a requests response to a file.
+
+6. In Chrome and Internet Explorer for Windows, the developer tools are already installed, and you can press F12 to make them appear. In macOS, pressing image-OPTION-I will open Chrome’s Developer Tools. In Firefox, you can bring up the Web Developer Tools Inspector by pressing CTRL-SHIFT-C on Windows and Linux or by pressing image-OPTION-C on macOS.
+
+7. Right-click where it is on the page (or CONTROL-click on macOS) and select Inspect Element from the context menu that appears. This will bring up the Developer Tools window, which shows you the HTML that produces this particular part of the web page.
+
+8. soup.select('#author')
+
+9. soup.select('.notice')
+
+10. soup.select('div span')
+
+11. soup.select('input[type="button"]')
+
+12. Calling getText() on the element returns the element’s text, or inner HTML.
+
+13. linkElem=elems.attrs
+
+14. from selenium import webdriver
+
+15. The find_element_* methods return a single WebElement object, representing the first element on the page that matches your query. The find_elements_* methods return a list of WebElement_* objects for every matching element on the page.
+
+16. click() method that simulates a mouse click on that element.
+send_keys() method sends a sequence of keystrokes to the element.
+
+17. Calling the submit() method on any element will have the same result as clicking the Submit button for the form that element is in.
+
+18. .back() Clicks the Back button.
+.forward() Clicks the Forward button.
+.refresh() Clicks the Refresh/Reload button.

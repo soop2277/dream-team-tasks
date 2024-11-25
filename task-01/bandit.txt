@@ -31,3 +31,5 @@ Level13->Leavel14 - found the sshkey.private and used the private key to log int
 Level14->Level15 - to connect to the given network I used the nc command, nc localhost 30000 and typed in the password of the current level MU4VWeTyJk8ROof1qqmcBPaLh7lDCPvS to get the password for the next level that is 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
 
 Level15-Level16 - I opened ssl connection to a server running on localhost at port 30001 using ssl encryption via the command openssl s_client -connect localhost:30001 and they asked me the type in the password of current level, which I did and got the password for the next level that is kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
+
+Level16-Level17 - 
